@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+        }
+        a {
+            text-decoration: none;
+            color: darkblue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book List</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{{ url_for('book_details', book_id=book['key'].split('/')[-1]) }}">
+                {{ book['title'] }}
+            </a> by {{ book['author_name'][0] }}, {{ book['first_publish_year'] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

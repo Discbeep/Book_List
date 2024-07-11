@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Details</title>
+</head>
+<body>
+    <h1>{{ book['title'] }}</h1>
+    <p><strong>Author:</strong> {{ book['authors'][0]['name'] }}</p>
+    <p><strong>Publish Year:</strong> {{ book.get('publish_date', 'N/A') }}</p>
+    <p><strong>Number of Pages:</strong> {{ book.get('number_of_pages', 'N/A') }}</p>
+    <p><strong>Publishers:</strong> {% for publisher in book['publishers'] %}{{ publisher['name'] }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+    <p><strong>ISBN:</strong> {{ book.get('isbn_10', ['N/A'])[0] }}</p>
+    <a href="/">Go Back</a>
+</body>
+</html>
