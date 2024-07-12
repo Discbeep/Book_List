@@ -1,0 +1,2 @@
+Book_List: A Flask Application
+Booksy is a Flask-based web application that displays a list of ten books fetched from the Open Library API. This application demonstrates basic Flask functionality such as routing, template rendering, and making API calls. Visit the live site:https://book-list-512n.onrender.com
